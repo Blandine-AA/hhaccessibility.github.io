@@ -1,6 +1,6 @@
 @extends('layouts.default', ['body_class' => 'nav-home-page'])
 @section('footer-content')
-	<script src="/js/jquery-3.1.1.js"  type="text/javascript"></script>
+	<script src="/js/jquery-3.1.1.js" type="text/javascript"></script>
 	<script src="/js/utils.js" type="text/javascript"></script>
 	<script src="/js/home.js" type="text/javascript"></script>
 	<script src="/js/hover_text.js" type="text/javascript"></script>

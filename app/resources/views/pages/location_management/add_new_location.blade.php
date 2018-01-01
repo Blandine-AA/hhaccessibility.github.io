@@ -1,6 +1,5 @@
 @extends('layouts.default')
 @section('head-content')
-	<script src="/css/jquery/external/jquery/jquery.js"></script>
 	<script>
 		var nearby_locations = {!! $locations !!};
 	</script>

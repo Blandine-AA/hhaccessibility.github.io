@@ -9,3 +9,7 @@
 		<link href="/css/app.css" rel="stylesheet" type="text/css">
 		<link href="/css/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css">
 		<link rel="shortcut icon" href="{{{ asset('favicon.ico') }}}">
+		<script src="/js/jquery-3.1.1.js"></script>
+		<script type="text/javascript" language="JavaScript" src="/js/keep_session_active.js">
+		</script>
+		

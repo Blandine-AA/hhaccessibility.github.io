@@ -33,6 +33,7 @@ Route::post('password-recovery/reset-password', 'PasswordRecoveryController@rese
 Route::get('profile', 'ProfileController@index');
 
 Route::get('api/regions', 'ProfileController@getRegions');
+Route::post('api/keep-session-alive', 'SessionKeepAliveController@extendLifeOfSession');
 Route::post('profile', 'ProfileController@save');
 Route::get('change-password', 'ChangePasswordController@index');
 Route::post('change-password', 'ChangePasswordController@post');
@@ -43,6 +44,7 @@ Route::post('profile-photo-rotate', 'ProfilePhotoUploadController@rotate');
 Route::get('location-search', 'LocationSearchController@search');
 Route::post('api/set-search-radius', 'LocationSearchController@setSearchRadius');
 Route::get('location-modify/{location_id}', 'LocationManagementController@show');
+Route::get('location-update/{location_id}', 'LocationManagementController@modifyMyLocation');
 Route::get('add-location', 'LocationManagementController@addNewLocation');
 Route::post('add-location', 'LocationManagementController@addNewLocationSave');
 Route::get('get-nearby-locations/{longitude}/{latitude}', 'LocationManagementController@getLocationsNear');

@@ -3,6 +3,8 @@
 	<script type="text/javascript" src="/js/jquery-3.1.1.js"></script>
 	<script type="text/javascript" language="JavaScript" src="/js/question_category_mobile_menu.js">
     </script>
+	<script type="text/javascript" language="JavaScript" src="/js/keep_session_active.js">
+    </script>
 	<script type="text/javascript" language="JavaScript" src="/js/smart_menu.js">
     </script>
     <script type="text/javascript" language="JavaScript" src="/js/utils.js"></script>
