@@ -5,6 +5,7 @@ use App\Location;
 use App\QuestionCategory;
 use App\Question;
 use App\AnswerRepository;
+use DB;
 use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -122,6 +123,7 @@ class LocationRatingController extends Controller {
 		$question_categories = QuestionCategory::with('questions')->orderBy('name','ASC')->get();
 		$question_category = null;
 		$next_question_category_id = null;
+		$questions = [];
 
 		// If no category is specified, pick the first one.
 		if ( $question_category_id === null && !empty($question_categories) )
@@ -141,6 +143,10 @@ class LocationRatingController extends Controller {
 			{
 				$next_question_category_id = $next_question_category->id;
 			}
+
+			$questions = DB::table('question')
+				->where('question_category_id', '=', $question_category_id)
+				->get();
 		}
 
 		return view('pages.location_rating.rate', [
