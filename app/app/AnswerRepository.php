@@ -97,6 +97,31 @@ class AnswerRepository
 
 		return $answers;
 	}
+	
+	public static function getQuestionsData(string $location_id, int $question_category_id)
+	{
+		/*
+		$location_tag_ids = DB::table('location_location_tag')
+			->where('location_id', '=', $location_id)
+			->get(['location_tag_id']);
+		$questions = DB::table('question')
+			->where('question_category_id', '=', $question_category_id)
+			->orderBy('order')
+			->get(['id', 'is_always_required', 'is_required_config']);
+
+		$resulting_data = [];
+		foreach ($questions as $question)
+		{
+			$is_required = $question->is_always_required;
+			if (!$is_required && $question->is_required_config)
+			{
+				
+			}
+			$resulting_data []= ['id' => $question->id, 'is_always_required' => $is_required];
+		}*/
+
+		return [];
+	}
 
 	public static function saveAnswer(string $location_id, int $question_id, int $answer_value)
 	{

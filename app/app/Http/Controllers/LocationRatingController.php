@@ -155,6 +155,7 @@ class LocationRatingController extends Controller {
 			'uses_screen_reader' => $uses_screen_reader,
 			'question_category' => $question_category,
 			'question_categories' => $question_categories,
+			'questions' => AnswerRepository::getQuestionsData($location_id, $question_category_id),
 			'answer_repository' => new AnswerRepository($location_id, $question_category_id),
 			'next_question_category_id' => $next_question_category_id
 	   ]);
