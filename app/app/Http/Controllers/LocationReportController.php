@@ -17,11 +17,20 @@ class LocationReportController extends Controller {
 		$question_categories = QuestionCategory::with('questions')->orderBy('name','ASC')->get();
 		$question_category_id = intval($question_category_id);
 		$question_category = QuestionCategory::find($question_category_id);
+		$user_ratings_data = DB('user_rating')
+			->where('location_id', '=', $location_id)
+			// FIXME: filter out all ratings from users who have a more recent rating on the same question and location.
+			->get();
+		$user_ratings = [];
+		// FIXME: loop through questions in the category initializing each count to 0.
+		// Loop through the user_ratings_data.
+
 		$view_data = [
 			'time_zone_offset' => BaseUser::getTimeZoneOffset(),
 			'location' => $location,
 			'question_categories' => $question_categories,
 			'question_category' => $question_category,
+			'user_counts' => $user_counts,
 			'comments' => $question_category
 				->comments()
 				->where('location_id', '=', $location_id)

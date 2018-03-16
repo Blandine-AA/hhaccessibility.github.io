@@ -16,6 +16,9 @@
 				<span class="percentage">
 				{!! $question->getAccessibilityRating($location_id, 'universal') !!}%
 				</span>
+				<span class="user-count">
+				{!! $user_counts[$question->id] !!}
+				</span>
 			</div>
 		@endforeach
 	</div>
